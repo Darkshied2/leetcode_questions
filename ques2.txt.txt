@@ -1,0 +1,25 @@
+//Single Number III solution in C++(leetcode)
+
+
+class Solution {
+
+public:
+    vector<int> singleNumber(vector<int>& nums) {
+        unordered_map<int,int> u;
+
+        int l=nums.size();
+
+        for(int i=0;i<l;++i){
+            u[nums[i]]++;
+        }
+
+        vector<int> res;
+
+        for(auto i:u){
+            if(i.second==1){
+                res.push_back(i.first);
+            }
+        }
+        return res;
+    }
+};
